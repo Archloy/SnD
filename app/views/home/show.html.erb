@@ -1,18 +1,83 @@
-<% if current_user %>
+<html>
+	
+	<head>
+		<%= stylesheet_link_tag "style.css" %>	
+	</head>
+	<% if current_user %>
+	<header>
+		<div class="container">
+				<div class="row" id="entete">
+			  
+					<div class="col-md-3" id="welcome">
+						<h3>Welcome <%=current_user.name %> </h3>
+					</div>
+					
+					<div class="col-md-5" id="titre">
+						<h1>Share'N DEATH</h1>
+					</div>
+					
+					<div class="col-md-2 logo">
+						<img href="/images/logo.jpg" id="logo" />
+					</div>
+				</div>  
+				
+			</div>
+	</header>
+		
+		
+		  
+		<body>
+			
+			
+			
+			
+			<div class="container-fluid">
+				
+				<div class="row" id="menu">
+					<div class="col-md-offset-4 col-md-4">
+						<div class="input-group">
+						  <span class="input-group-addon glyphicon glyphicon-search"  id="sizing-addon2"></span>
+						  <input type="text" class="form-control" placeholder="Recherchez un pote, un groupe..." aria-describedby="sizing-addon2">
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="row" id="body">
+			  
+				  <div class="col-md-3 gauche">
+					<ul>
+						<li><a>Actus</a></li>
+						<li><a>Groupes</a></li>
+					</ul>
+				  </div>
+				  
+				  <div class="col-md-6 corps">
+				  <p>hello</p>
+				  </div>
+				  
+				  <div class="col-md-3 droite">
+					<ul>
+						<li><a href="/users">Profil</a></li>
+						<li><a>Photos</a></li>
+						<li><a>Amis</a></li>
+					</ul>
+				  </div>
+				  
+			  </div>
+			</div>
+			
+		</body>
 
-  <div class="row">
-    <div class="col-xs-3">
-        <h3>Welcome <%=current_user.name %> </h3>
-    </div>
-  </div>
+		<% else %>
 
-<% else %>
+		  <div class="row entete">
+			<div class="col-md-3 >
+				<h3>Welcome !</h3>
+				<p>Please connect to see our beautiful work !</p>
+			</div>
+		  </div>
 
-  <div class="row">
-    <div class="col-xs-3">
-        <h3>Welcome !</h3>
-        <p>Please connect to see our beautiful work !</p>
-    </div>
-  </div>
-
-<% end %>
+		<% end %>
+	
+</html>
