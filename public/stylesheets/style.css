@@ -1,0 +1,49 @@
+.container
+{
+		background-color: grey;
+		border-radius: 10px;
+		margin-top: 10px;
+}
+
+.gauche
+{
+	background-color: #464646;
+	border-radius: 15px;
+	margin-top: 15px;
+}
+
+.droite
+{
+	background-color: #464646;
+	border-radius: 15px;
+	margin-top: 15px;
+}
+
+#entete
+{
+}
+#titre
+{
+	text-align: center;
+	color:black;
+}
+
+#welcome{
+	color: white;
+}
+
+#menu{
+	background-color: black;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+p{
+	margin-top: 15px;
+	background-color: #1F1F1F;
+}
+
+#logo{
+height: 50px;
+width: 50px;
+}
