@@ -1,31 +1,5 @@
-<html>
-	
-	<head>
-		<%= stylesheet_link_tag "style.css" %>	
-	</head>
+
 	<% if current_user %>
-	<header>
-		<div class="container">
-				<div class="row" id="entete">
-			  
-					<div class="col-md-3" id="welcome">
-						<h3>Welcome <%=current_user.name %> </h3>
-					</div>
-					
-					<div class="col-md-5" id="titre">
-						<h1>Share'N DEATH</h1>
-					</div>
-					
-					<div class="col-md-2 logo">
-						<img href="/images/logo.jpg" id="logo" />
-					</div>
-				</div>  
-				
-			</div>
-	</header>
-		
-		
-		  
 		<body>
 			
 			
@@ -46,6 +20,9 @@
 				<div class="row" id="body">
 			  
 				  <div class="col-md-3 gauche">
+					  
+					<div class="welcome">Welcome <%=current_user.name %> </div>
+					
 					<ul>
 						<li><a>Actus</a></li>
 						<li><a>Groupes</a></li>
@@ -53,7 +30,10 @@
 				  </div>
 				  
 				  <div class="col-md-6 corps">
-				  <p>hello</p>
+					<div class="headcorps">Fil d'actualité</div>
+					<div class="article">
+						This is a new article
+					</div>
 				  </div>
 				  
 				  <div class="col-md-3 droite">
@@ -72,9 +52,9 @@
 		<% else %>
 
 		  <div class="row entete">
-			<div class="col-md-3 >
+			<div class="col-md-3" >
 				<h3>Welcome !</h3>
-				<p>Please connect to see our beautiful work !</p>
+				<h5>Please connect to see our beautiful work !</h5>
 			</div>
 		  </div>
 

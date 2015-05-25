@@ -19,6 +19,33 @@
 	margin-top: 15px;
 }
 
+.welcome
+{
+	color: white;
+}
+
+.headcorps{
+	background-color: black;
+	border-radius: 10px;
+	color: white;
+	font-size: 150%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.article
+{
+	margin-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-radius: 5px;
+	background-color: #1F1F1F;
+	color: white;
+}
+
 #entete
 {
 }
@@ -39,8 +66,7 @@
 	padding-bottom: 5px;
 }
 p{
-	margin-top: 15px;
-	background-color: #1F1F1F;
+	
 }
 
 #logo{
