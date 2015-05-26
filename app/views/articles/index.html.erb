@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.owner %></td>
+        <td><%= article.date %></td>
+        <td><%= article.title %></td>
+        <td><%= article.message %></td>
+        <td><%= link_to 'Show', article %></td>
+        <% if current_user %>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user %>
+  <%= link_to 'New Article', new_article_path %>
+<% else %>
+  <p>Please <%= link_to "Sign in", "/auth/google_oauth2", id: "sign_in" %> to add your own article !
+  </p>
+<% end %>
