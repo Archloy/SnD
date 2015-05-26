@@ -31,9 +31,90 @@
 				  
 				  <div class="col-md-6 corps">
 					<div class="headcorps">Fil d'actualité</div>
+						
+						<div class="hidden">
+						
+						<%= 	require 'open-uri' 
+								require 'nokogiri' 
+							
+								page = Nokogiri::HTML(open("http://www.sueurdemetal.com/ville-metal-bordeaux-33.htm" ), nil, 'ISO-8859-1')
+								
+								news_links = page.css('div#contenupage')
+								
+								#Recup des dates
+								i=0
+								dates = [] 
+								for elem in news_links.css('h3') 
+									dates[i] = elem.text
+									i = i+1
+								end
+								
+								#Recup des salles
+								i=0
+								salles = [] 
+								for elem in news_links.css('p strong') 
+									salles[i] = elem.text
+									i = i+1
+								end
+								
+								
+								#Recup des groupes dans les concerts
+								i=0
+								concerts = [] 
+								
+								
+									
+								groupes = []
+								
+								concert = []
+								concerts = []
+								i=0
+								
+								for elem in dates
+									concert[0] = elem
+									concert[1] = salles[i]
+									j=0
+								
+									a = news_links.css('table.texte tr table.texte')[i]
+
+										 
+									for o in a.css('strong')
+									
+										groupes[j] = o.text
+										j = j+1
+										
+									end
+									
+									concert[2] = groupes
+									
+									groupes = []
+									concerts[i] = concert
+									
+									concert = []
+									i = i+1
+									
+								end
+								
+								 %>
+							</div>
+					<% i=0 %>	 
+					<% for article in concerts %>			 
 					<div class="article">
-						This is a new article
+						<div class="titrenews">
+							<h4> <%= article[0] %> - <%= article[1] %> </h4>
+						</div>
+						
+						<div class="groupes">
+							<ul>
+							<% for groupe in article[2] %>
+								<li> <%= groupe %> </li>
+							<% end %>
+							</ul>
+						</div>
+						<% i=i+1 %>
 					</div>
+					<% end %>
+					
 				  </div>
 				  
 				  <div class="col-md-3 droite">

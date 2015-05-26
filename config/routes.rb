@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'home/show'
-
+  
   get 'auth/:provider/callback', to: 'sessions#create'
 
   get 'auth/failure', to: redirect('/')
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
+  resource :home, only: [:show, :a]
 
   root to: "home#show"
   # The priority is based upon order of creation: first created -> highest priority.
